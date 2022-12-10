@@ -45,9 +45,10 @@ export class LoginComponent implements OnInit {
      this.Auth.login(data.value).subscribe((response)=>
        {
          this.dataReceived=response
-         //this.asd.saveDataProfil(this.dataReceived.token)
          this.route.navigate([this.url])
-        
+          .then(() => {
+            window.location.reload();
+          });
        },err=>this.messageAuthError="invalid email and password")
 }
 

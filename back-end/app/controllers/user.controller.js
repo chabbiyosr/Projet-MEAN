@@ -3,13 +3,13 @@ exports.allAccess = (req, res) => {
      res.status(200).send("Public Content.");
     };
   
-//   exports.userBoard = (req, res) => {
-//     res.status(200).send("User Content.");
-//   };
+  /*  exports.userBoard = (req, res) => {
+     res.status(200).send("User Content.");
+   };
   
-//   exports.studentBoard = (req, res) => {
-//     res.status(200).send("Student Content.");
-//   };
+   exports.studentBoard = (req, res) => {
+     res.status(200).send("Student Content.");
+   }; */
 
 //   exports.adminBoard = (req, res) => {
 //     res.status(200).send("Admin Content.");
@@ -55,7 +55,7 @@ exports.allAccess = (req, res) => {
 // });
 
 //ajouter utilisateur
-exports.post("/ajouter_user",async(req,res)=>{
+exports.post=  async(req,res)=>{
   try{
       let new_user=new User({
         firstname:req.body.firstname,
@@ -71,7 +71,7 @@ exports.post("/ajouter_user",async(req,res)=>{
       console.log(err);
   }
 
-});
+}; 
 
 exports.update = async(req,res)=>{
   try{
