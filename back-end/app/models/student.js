@@ -2,17 +2,25 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // Define collection and schema
 let Student= new Schema({
-   Username: {
+  
+   RollNo : {
+    type: Number
+   },
+  Name: {
       type: String
    },
-   RollNo : {
+   Departement: {
+      type: String
+   },
+   
+   Mobile : {
     type: Number
    },
    email: {
       type: String
    },
-   MobilelNo : {
-    type: Number
+   AdmissionDate: {
+      type: Date
    },
   
 }, {

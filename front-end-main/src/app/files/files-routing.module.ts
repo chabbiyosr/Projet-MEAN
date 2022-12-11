@@ -9,11 +9,12 @@ import { StudentsComponent } from './students/students.component';
 import { ProfessorsComponent } from './professors/professors.component';
 import { AddprofessorsComponent } from './professors/addprofessors/addprofessors.component';
 import { EditprofessorsComponent } from './professors/editprofessors/editprofessors.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 
 const routes: Routes = [
     {path : "" , component : DashboardComponent , children : [
-    {path : "" , component : AdminComponent},  
+    {path : "" , component : FirstPageComponent},  
     {path : "student" , component : StudentsComponent},
     {path : "addstudent" , component :AddstudentComponent},
     {path : "editstudent" , component :EditstudentComponent},

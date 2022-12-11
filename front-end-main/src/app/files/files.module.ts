@@ -11,6 +11,7 @@ import { EditstudentComponent } from './students/editstudent/editstudent.compone
 import { ProfessorsComponent } from './professors/professors.component';
 import { AddprofessorsComponent } from './professors/addprofessors/addprofessors.component';
 import { EditprofessorsComponent } from './professors/editprofessors/editprofessors.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 
 
@@ -23,7 +24,8 @@ import { EditprofessorsComponent } from './professors/editprofessors/editprofess
     EditstudentComponent,
     ProfessorsComponent,
     AddprofessorsComponent,
-    EditprofessorsComponent
+    EditprofessorsComponent,
+    FirstPageComponent
   ],
   imports: [
     CommonModule,
