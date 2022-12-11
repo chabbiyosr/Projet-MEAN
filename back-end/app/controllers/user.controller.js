@@ -33,6 +33,28 @@ exports.allAccess = (req, res) => {
 
 // });
 
+// app.post('/addstudent',(req,res,next)=>{
+//   User.create(req.body, async (err, data) => {
+//     try{
+//            let new_user=new User({
+//              firstname:req.body.firstname,
+//             lastname:req.body.lastname,
+//              email:req.body.email,
+//              password:req.body.password,
+//              role:req.body.role,
+//          });
+      
+//             await new_user.save();
+//              res.send("Save avec succès");  
+//          }
+//          catch(err){
+//              console.log(err);
+//          }
+  
+
+//    })
+//   });
+
 //MAJ
 
 // exports.post("/ajouter_user", async(req,res)=>{

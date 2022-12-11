@@ -11,12 +11,19 @@ module.exports = function(app) {
     next();
   });
 
-  // app.post('addstudent',(req,res,next)=>{
-    
+app.post('/ajouterUser',(req,res,next)=>{
+  User.create(req.body, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  
 
-  // })
+   })
+  });
 
-  // app.get("/api/test/all", controller.allAccess);
+ app.get("/api/test/all", controller.allAccess);
 
 /*   app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
 
