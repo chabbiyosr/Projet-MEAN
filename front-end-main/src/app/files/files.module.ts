@@ -21,7 +21,6 @@ import { EditprofessorsComponent } from './professors/editprofessors/editprofess
     StudentsComponent,
     AddstudentComponent,
     EditstudentComponent,
- 
     ProfessorsComponent,
     AddprofessorsComponent,
     EditprofessorsComponent
