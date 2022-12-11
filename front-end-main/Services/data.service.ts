@@ -13,6 +13,8 @@ export class dataService {
     }
 
 
-addstudent(firstname:String,lastname:String,email:String,age:number)
-    return this.http.post('')
-}
+// addstudent(firstname:String,lastname:String,email:String,age:number)
+//     return this.http.post('')
+// 
+
+} 
