@@ -7,11 +7,11 @@ import { AdminComponent } from './admin/admin.component';
 import { StudentsComponent } from './students/students.component';
 import { AddstudentComponent } from './students/addstudent/addstudent.component';
 import { EditstudentComponent } from './students/editstudent/editstudent.component';
-import { AboutstudentComponent } from './students/aboutstudent/aboutstudent.component';
+
 import { ProfessorsComponent } from './professors/professors.component';
 import { AddprofessorsComponent } from './professors/addprofessors/addprofessors.component';
 import { EditprofessorsComponent } from './professors/editprofessors/editprofessors.component';
-import { AboutprofessorsComponent } from './professors/aboutprofessors/aboutprofessors.component'; 
+
 
 
 @NgModule({
@@ -21,11 +21,10 @@ import { AboutprofessorsComponent } from './professors/aboutprofessors/aboutprof
     StudentsComponent,
     AddstudentComponent,
     EditstudentComponent,
-    AboutstudentComponent,
+ 
     ProfessorsComponent,
     AddprofessorsComponent,
-    EditprofessorsComponent,
-    AboutprofessorsComponent
+    EditprofessorsComponent
   ],
   imports: [
     CommonModule,
