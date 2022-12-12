@@ -12,7 +12,7 @@ import { ProfessorsComponent } from './professors/professors.component';
 import { AddprofessorsComponent } from './professors/addprofessors/addprofessors.component';
 import { EditprofessorsComponent } from './professors/editprofessors/editprofessors.component';
 import { FirstPageComponent } from './first-page/first-page.component';
-
+import  { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,10 +26,14 @@ import { FirstPageComponent } from './first-page/first-page.component';
     AddprofessorsComponent,
     EditprofessorsComponent,
     FirstPageComponent
+
   ],
   imports: [
     CommonModule,
-    FilesRoutingModule
+    FilesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ]
 })
 export class FilesModule { }

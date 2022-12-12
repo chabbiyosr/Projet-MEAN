@@ -17,10 +17,10 @@ const routes: Routes = [
     {path : "" , component : FirstPageComponent},  
     {path : "student" , component : StudentsComponent},
     {path : "addstudent" , component :AddstudentComponent},
-    {path : "editstudent" , component :EditstudentComponent},
+    {path : "editstudent/:id" , component :EditstudentComponent},
     {path : "professors" , component : ProfessorsComponent},
     {path : "addprofessors" , component :AddprofessorsComponent},
-    {path : "editprofessors" , component :EditprofessorsComponent},
+    {path : "editprofessors/:id" , component :EditprofessorsComponent},
   
   ]}
 ];

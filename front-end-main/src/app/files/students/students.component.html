@@ -55,7 +55,7 @@
                         <thead>
                           
                             
-                            <th> Roll No </th>
+                         
                             <th> Name </th>
                             <th> Department </th>
                             <th> Mobile </th>
@@ -64,107 +64,28 @@
                             <th> Action </th>
                           
                         </thead>
-                        <tbody>
-                          <tr class="odd gradeX">
-                            <td class="left">1</td>
-                            <td>Hanin </td>
-                            <td class="left">Engineer</td>
-                            <td><a href="tel:4444565756">
-                                4444565756 </a></td>
-                            <td><a href="mailto:hanin@gmail.com">
-                                hanin@gmail.com </a></td>
-                            <td class="left">22 Feb 2010</td>
-                            <td>
-                              <a href="/admin/editstudent" class="tblEditBtn">
-                                <i class="fa fa-pencil"></i>
-                              </a>
-                              <a class="tblDelBtn">
-                                <i class="fa fa-trash-o"></i>
-                              </a>
-                            </td>
-                          
-                          
-                          
-                          <tr class="odd gradeX">
-                            
-                            <td class="left">2</td>
-                            <td>Sarah </td>
-                            <td class="left">Art</td>
-                            <td><a href="tel:44455546456">
-                                44455546456 </a></td>
-                            <td><a href="mailto:shuxer@gmail.com">
-                                sarah@gmail.com </a></td>
-                            <td class="left">05 Jun 2011</td>
-                            <td>
-                              <a href="/admin/editstudent" class="tblEditBtn">
-                                <i class="fa fa-pencil"></i>
-                              </a>
-                              <a class="tblDelBtn">
-                                <i class="fa fa-trash-o"></i>
-                              </a>
-                            </td>
-                          </tr>
+                        <tbody *ngFor="let student of allstudents">
 
-
-                          <tr class="odd gradeX">
-                    
-                            <td class="left">3</td>
-                            <td>Hend</td>
-                            <td class="left">Digital Marketing</td>
-                            <td><a href="tel:444543564">
-                                444543564 </a></td>
-                            <td><a href="mailto:shuxer@gmail.com">
-                                Hend@gmail.com </a></td>
-                            <td class="left">15 Feb 2012</td>
-                            <td>
-                              <a href="/admin/editstudent" class="tblEditBtn">
-                                <i class="fa fa-pencil"></i>
-                              </a>
-                              <a class="tblDelBtn">
-                                <i class="fa fa-trash-o"></i>
-                              </a>
-                            </td>
-                          </tr>
-                         
-                          <tr class="odd gradeX">
-                            
-                            <td class="left">4</td>
-                            <td> Ryan</td>
-                            <td class="left">Music</td>
-                            <td><a href="tel:444543564">
-                                444543564 </a></td>
-                            <td><a href="mailto:shuxer@gmail.com">
-                                Ryan@gmail.com </a></td>
-                            <td class="left">03 Dec 2001</td>
-                            <td>
-                              <a href="/admin/editstudent" class="tblEditBtn">
-                                <i class="fa fa-pencil"></i>
-                              </a>
-                              <a class="tblDelBtn">
-                                <i class="fa fa-trash-o"></i>
-                              </a>
-                            </td>
-                         
+                       
                             <tr class="odd gradeX">
-                    
-                              <td class="left">5</td>
-                              <td>Yosr</td>
-                              <td class="left">Mechanical</td>
-                              <td><a href="tel:444543564">
-                                  444543564 </a></td>
-                              <td><a href="mailto:Yosr@gmail.com">
-                                 Yosr@gmail.com </a></td>
-                              <td class="left">18 Feb 2012</td>
+                         
+                              <td>{{student.Name}} </td>
+                              <td class="left">{{student.Departement}} </td>
+                              <td><a href="tel:4444565756">
+                                {{student.Mobile}}  </a></td>
+                              <td><a href="mailto:hanin@gmail.com">
+                                {{student.email}} </a></td>
+                              <td class="left">{{student.AdmissionDate}} </td>
                               <td>
-                                <a href="/admin/editstudent" class="tblEditBtn">
+                                <a  (click)="FunctionEdite(student._id)"class="tblEditBtn">
                                   <i class="fa fa-pencil"></i>
                                 </a>
-                                <a class="tblDelBtn">
+                                <a  (click)="FunctionDelete(student._id)" class="tblDelBtn">
                                   <i class="fa fa-trash-o"></i>
                                 </a>
                               </td>
                             </tr>
-                           
+                        
                         </tbody>
                       </table>
                     </div>

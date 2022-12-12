@@ -27,130 +27,102 @@
                         </button>
                         
                     </div>
-                    <div class="card-body row">
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" value=""
-                                    id="txtFirstName">
-                                <label class="mdl-textfield__label">Username</label>
+                    <div class="card-body" id="bar-parent">
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)" id="form_sample_1" class="form-horizontal">
+                            <div class="form-body">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Name
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input type="text"  name="Name" ngModel  #Name="ngModel"  [(ngModel)]="proffresult.Name"  data-required="1"
+                                            placeholder="enter  Name"
+                                            class="form-control input-height" />
+                                    </div>
+                                </div>
+                               
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Departments
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <select class="form-select input-height"  name="Departement" ngModel  #Departement="ngModel" [(ngModel)]="proffresult.Departement" >
+                                            <option value="">Select...</option>
+                                            <option value="Computer">Computer</option>
+                                            <option value="Mechanical">Mechanical</option>
+                                            <option value="Mathematics">Mathematics</option>
+                                            <option value="Commerce">Commerce</option>
+                                            <option value="Music">Music</option>
+                                            <option value="Science">Science</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Gender
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <select class="form-select input-height" name="Gender" ngModel #Gender="ngModel" [(ngModel)]="proffresult.Gender" >
+                                            <option value="">Select...</option>
+                                            <option value=" Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Mobile No.
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input  name="Mobile" ngModel   #Mobile="ngModel" [(ngModel)]="proffresult.Mobile" type="text" placeholder="mobile number"
+                                            class="form-control input-height" /> </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Email
+                                    </label>
+                                    <div class="col-md-5">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-envelope"></i>
+                                            </span>
+                                            <input  name="Email" ngModel  #Email="ngModel" [(ngModel)]="proffresult.Email"  type="text" class="form-control input-height"
+                                                name="Email" placeholder="Email Address"> </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Joining Date
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <div class="input-append date">
+                                            <div id="dateIcon" class="input-group datePicker">
+                                                <input    name="JoiningDate" ngModel #JoiningDate="ngModel" [(ngModel)]="proffresult.JoiningDate" class="formDatePicker form-control" type="text"
+                                                    placeholder="Select Date.." data-input>
+                                                <span class="dateBtn">
+                                                    <a class="input-button" title="toggle" data-toggle>
+                                                        <i class="icon-calendar"></i>
+                                                    </a>
+                                                    <a class="input-button" title="clear" data-clear>
+                                                        <i class="icon-close"></i>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-9">
+                                            <button type="submit"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-circle btn-primary">
+                                                Edit</button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="email" value=""
-                                    id="txtemail">
-                                <label class="mdl-textfield__label">Email</label>
-                                <span class="mdl-textfield__error">Enter Valid Email Address!</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" value=""
-                                    id="date">
-                                <label class="mdl-textfield__label">Joining Date</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="password" id="">
-                                <label class="mdl-textfield__label">Password</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="password" id="">
-                                <label class="mdl-textfield__label">Confirm Password</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" value=""
-                                    id="designation">
-                                <label class="mdl-textfield__label">Designation</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="list2" value=""
-                                    readonly tabIndex="-1">
-                                <label for="list2" class="pull-right margin-0">
-                                    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                                </label>
-                                <label for="list2" class="mdl-textfield__label">Department</label>
-                                <ul data-mdl-for="list2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                    <li class="mdl-menu__item" data-val="DE">Computer</li>
-                                    <li class="mdl-menu__item" data-val="DE">Art</li>
-                                    <li class="mdl-menu__item" data-val="BY">Mechanical</li>
-                                    <li class="mdl-menu__item" data-val="BY">Mathematics</li>
-                                    <li class="mdl-menu__item" data-val="BY">Commerce</li>
-                                    <li class="mdl-menu__item" data-val="DE">Music</li>
-                                    <li class="mdl-menu__item" data-val="DE">Digital Marketing</li>
-                                    <li class="mdl-menu__item" data-val="DE">Science</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="sample2" value=""
-                                    readonly tabIndex="-1">
-                                <label for="sample2" class="pull-right margin-0">
-                                    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                                </label>
-                                <label for="sample2" class="mdl-textfield__label">Gender</label>
-                                <ul data-mdl-for="sample2"
-                                    class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                    <li class="mdl-menu__item" data-val="DE">Male</li>
-                                    <li class="mdl-menu__item" data-val="BY">Female</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" value=""
-                                    pattern="-?[0-9]*(\.[0-9]+)?" id="text5">
-                                <label class="mdl-textfield__label" for="text5">Mobile Number</label>
-                                <span class="mdl-textfield__error">Number required!</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div
-                                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" value=""
-                                    id="dateOfBirth">
-                                <label class="mdl-textfield__label">Birth Date</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield txt-full-width">
-                                <input class="mdl-textfield__input" rows="4"
-                                    id="text7">
-                                <label class="mdl-textfield__label" for="text7">Address</label>
-                            </div>
-                        </div>
-                       
-                        <div class="col-lg-12 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield txt-full-width">
-                                <input class="mdl-textfield__input" rows="4"
-                                    id="education">
-                                <label class="mdl-textfield__label" for="text7">Education</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 p-t-20 text-center">
-                            <button type="button"
-                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-circle btn-primary">Submit</button>
-                            <button type="button"
-                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-circle btn-danger">Cancel</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

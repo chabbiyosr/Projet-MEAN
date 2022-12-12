@@ -59,145 +59,35 @@
                                                         <th> Name </th>
                                                         <th> Department </th>
                                                         <th> Gender </th>
-                                                        <th> Degree </th>
+                                                    
                                                         <th> Mobile </th>
                                                         <th> Email </th>
                                                         <th>Joining Date</th>
                                                         <th> Action </th>
                                                     
                                                 </thead>
-                                                <tbody>
+                                                <tbody *ngFor="let professor of allprofessors">
                                                     <tr class="odd gradeX">
-                                                        <td>Slim</td>
-                                                        <td class="left">Computer</td>
-                                                        <td class="left">Male</td>
-                                                        <td class="left">M.Com, B.Ed</td>
-                                                        <td><a href="tel:4444565756">
-                                                                4444565756 </a></td>
-                                                        <td><a href="mailto:Mohamed@gmail.com">
-                                                           Slim@gmail.comsdgfsdfg </a></td>
-                                                        <td class="left">22 Feb 2000</td>
-                                                        <td>
-                                                            <a href="/admin/editprofessors"
-                                                                class="tblEditBtn">
-                                                                <i class="fa fa-pencil"></i>
-                                                            </a>
-                                                            <a class="tblDelBtn">
-                                                                <i class="fa fa-trash-o"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    
-                                                    <tr class="odd gradeX">
-                                                        
-                                                        <td>Sami</td>
-                                                        <td class="left">Music</td>
-                                                        <td class="left">Male</td>
-                                                        <td class="left">B.A.</td>
-                                                        <td><a href="tel:444543564">
-                                                                444543564 </a></td>
-                                                        <td><a href="mailto:Sami@gmail.com">
-                                                                Sami@gmail.com </a></td>
-                                                        <td class="left">15 Feb 2012</td>
-                                                        <td>
-                                                            <a href="/admin/editprofessors"
-                                                                class="tblEditBtn">
-                                                                <i class="fa fa-pencil"></i>
-                                                            </a>
-                                                            <a class="tblDelBtn">
-                                                                <i class="fa fa-trash-o"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <tr class="odd gradeX">
-                                                        
-                                                        <td>Eya</td>
-                                                        <td class="left">Digital Marketing</td>
-                                                        <td class="left">Female</td>
-                                                        <td class="left">M.COM, M.Ed.</td>
-                                                        <td><a href="tel:444543564">
-                                                                444543564 </a></td>
-                                                        <td><a href="mailto:shuxer@gmail.com">
-                                                                Eya@gmail.com </a></td>
-                                                        <td class="left">17 Mar 2013</td>
-                                                        <td>
-                                                            <a href="/admin/editprofessors"
-                                                                class="tblEditBtn">
-                                                                <i class="fa fa-pencil"></i>
-                                                            </a>
-                                                            <a class="tblDelBtn">
-                                                                <i class="fa fa-trash-o"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="odd gradeX">
+                         
+                                                        <td>{{professor.Name}} </td>
+                                                        <td class="left">{{professor.Departement}} </td>
+                                                        <td class="left">{{professor.Gender}} </td>
                                                        
-                                                        <td>Ahmed</td>
-                                                        <td class="left">Mechanical</td>
-                                                        <td class="left">Male</td>
-                                                        <td class="left">M.Com, B.Ed</td>
                                                         <td><a href="tel:4444565756">
-                                                                4444565756 </a></td>
-                                                        <td><a href="mailto:shuxer@gmail.com">
-                                                                Ahmed@gmail.com </a></td>
-                                                        <td class="left">22 Feb 2000</td>
+                                                          {{professor.Mobile}}  </a></td>
+                                                        <td><a href="mailto:hanin@gmail.com">
+                                                          {{professor.Email}} </a></td>
+                                                        <td class="left">{{professor.JoiningDate}} </td>
                                                         <td>
-                                                            <a href="/admin/editprofessors"
-                                                                class="tblEditBtn">
-                                                                <i class="fa fa-pencil"></i>
-                                                            </a>
-                                                            <a class="tblDelBtn">
-                                                                <i class="fa fa-trash-o"></i>
-                                                            </a>
+                                                          <a  (click)="FunctionEdite(professor._id)"class="tblEditBtn">
+                                                            <i class="fa fa-pencil"></i>
+                                                          </a>
+                                                          <a  (click)="FunctionDelete(professor._id)" class="tblDelBtn">
+                                                            <i class="fa fa-trash-o"></i>
+                                                          </a>
                                                         </td>
-                                                    </tr>
-                                                   
-                                                    <tr class="odd gradeX">
-                                                       
-                                                        <td>Azza</td>
-                                                        <td class="left">Science</td>
-                                                        <td class="left">Female</td>
-                                                        <td class="left">B.Sc., M.Sc.</td>
-                                                        <td><a href="tel:44455546456">
-                                                                44455546456 </a></td>
-                                                        <td><a href="mailto:shuxer@gmail.com">
-                                                            Azza@gmail.com </a></td>
-                                                        <td class="left">05 Jun 2011</td>
-                                                        <td>
-                                                            <a href="/admin/editprofessors"
-                                                                class="tblEditBtn">
-                                                                <i class="fa fa-pencil"></i>
-                                                            </a>
-                                                            <a class="tblDelBtn">
-                                                                <i class="fa fa-trash-o"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="odd gradeX">
-                                                        
-                                                        <td>Moez</td>
-                                                        <td class="left">Music</td>
-                                                        <td class="left">Male</td>
-                                                        <td class="left">B.A.</td>
-                                                        <td><a href="tel:444543564">
-                                                                444543564 </a></td>
-                                                        <td><a href="mailto:shuxer@gmail.com">
-                                                            Moez@gmail.com </a></td>
-                                                        <td class="left">15 Feb 2012</td>
-                                                        <td>
-                                                            <a href="/admin/editprofessors"
-                                                                class="tblEditBtn">
-                                                                <i class="fa fa-pencil"></i>
-                                                            </a>
-                                                            <a class="tblDelBtn">
-                                                                <i class="fa fa-trash-o"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                   
-                                                   
+                                                      </tr>
+                                                
                                                 </tbody>
                                             </table>
                                         </div>

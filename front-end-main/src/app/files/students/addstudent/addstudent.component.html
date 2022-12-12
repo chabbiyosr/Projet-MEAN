@@ -28,48 +28,63 @@
                        
                     </div>
                     <div class="card-body" id="bar-parent">
-                        <form action="#" id="form_sample_1" class="form-horizontal">
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)" id="form_sample_1" class="form-horizontal">
                             <div class="form-body">
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Username
+                                    <label class="control-label col-md-3">Name
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="Username" placeholder="enter  Username"
+                                        <input type="text"  name="Name" ngModel #Name="ngModel" data-required="1"
+                                            placeholder="enter  Name"
                                             class="form-control input-height" />
                                     </div>
                                 </div>
-                                
-                                   
-                                
+                               
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Roll No
+                                    <label class="control-label col-md-3">Departments
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="rollNo" placeholder="enter roll no"
+                                        <select class="form-select input-height"  name="Departement" ngModel  #Departement="ngModel">
+                                            <option value="">Select...</option>
+                                            <option value="Computer">Computer</option>
+                                            <option value="Mechanical">Mechanical</option>
+                                            <option value="Mathematics">Mathematics</option>
+                                            <option value="Commerce">Commerce</option>
+                                            <option value="Music">Music</option>
+                                            <option value="Science">Science</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3">Mobile
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
+                                        <input  name="Mobile" ngModel   #Mobile="ngModel" type="text" placeholder="mobile number"
                                             class="form-control input-height" /> </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Email
+                                    <label class="control-label col-md-3">email
                                     </label>
                                     <div class="col-md-5">
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-envelope"></i>
                                             </span>
-                                            <input type="text" class="form-control input-height"
+                                            <input  name="email" ngModel  #email="ngModel" type="text" class="form-control input-height"
                                                 name="email" placeholder="Email Address"> </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">Registration Date
+                                    <label class="control-label col-md-3">Admission Date
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
                                         <div class="input-append date">
                                             <div id="dateIcon" class="input-group datePicker">
-                                                <input class="formDatePicker form-control" type="text"
+                                                <input    name="AdmissionDate" ngModel #AdmissionDate="ngModel" class="formDatePicker form-control" type="text"
                                                     placeholder="Select Date.." data-input>
                                                 <span class="dateBtn">
                                                     <a class="input-button" title="toggle" data-toggle>
@@ -83,83 +98,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Class
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <select class="form-select input-height" name="department">
-                                            <option value="">Select...</option>
-                                            <option value="Category 1">Computer</option>
-                                            <option value="Category 2">Mechanical</option>
-                                            <option value="Category 3">Mathematics</option>
-                                            <option value="Category 3">Commerce</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Gender
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <select class="form-select input-height" name="gender">
-                                            <option value="">Select...</option>
-                                            <option value="Category 1">Male</option>
-                                            <option value="Category 2">Female</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Mobile No.
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input name="number" type="text" placeholder="mobile number"
-                                            class="form-control input-height" /> </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Birth Date
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <div class="input-append date">
-                                            <div id="dateIcon2" class="input-group datePicker">
-                                                <input class="formDatePicker form-control" type="text"
-                                                    placeholder="Select Date.." data-input>
-                                                <span class="dateBtn">
-                                                    <a class="input-button" title="toggle" data-toggle>
-                                                        <i class="icon-calendar"></i>
-                                                    </a>
-                                                    <a class="input-button" title="clear" data-clear>
-                                                        <i class="icon-close"></i>
-                                                    </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="control-label col-md-3">Address
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <textarea name="address" placeholder="address"
-                                            class="form-control-textarea" rows="5"></textarea>
-                                    </div>
-                                </div>
-                                
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="offset-md-3 col-md-9">
-                                            <button type="button"
-                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-circle btn-primary">Submit</button>
-                                            <button type="button"
-                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-circle btn-danger">Cancel</button>
+                                            <button type="submit"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-circle btn-primary">
+                                                Submit</button>
+                                            
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
                         </form>
                     </div>
                 </div>

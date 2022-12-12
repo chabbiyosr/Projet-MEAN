@@ -19,8 +19,38 @@ export class  AuthadminService  {
     return this.http.post('http://localhost:3000/admin/login',data)
   } 
 
+  getstudentbyid(id:any){
+      return this.http.get('http://localhost:3000/getstudentBy/'+id)
+  }
+  getallstudents(){
+    return this.http.get('http://localhost:3000/all_students')
+  }
+  editstudentsbyid(id:any,data:any){
+    return this.http.put('http://localhost:3000/edit_student/'+id,data)
+  }
+  add_student(data:any){
+    return this.http.post('http://localhost:3000/add_student/',data)
+  }
+  deletebyid(id:any){
+    return this.http.delete('http://localhost:3000/delete_student/'+id)
+  }
   
 
+  getprofessorsbyid(id:any){
+    return this.http.get('http://localhost:3000/getprofessorBy/'+id)
+}
+getallprofessors(){
+  return this.http.get('http://localhost:3000/all_professor')
+}
+editprofessorbyid(id:any,data:any){
+  return this.http.put('http://localhost:3000/edit_professor/'+id,data)
+}
+deleteprofessorbyid(id:any){
+  return this.http.delete('http://localhost:3000/delete_professor/'+id)
+}
+add_professors(data:any){
+  return this.http.post('http://localhost:3000/add_professor',data)
+}
 //  login(data:any){
 
 //    return this.http.post('http://localhost:3000/admin/login',data)

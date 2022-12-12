@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-
+let Student = require('./app/models/student');
+let professor = require('./app/models/professor');
 const app = express();
 
 var corsOptions = {
@@ -37,54 +38,164 @@ db.mongoose
 
 
 
-// simple route
-
-
-
-/* app.post("/login", (req, res) => {
-  //res.json({ message: "Welcome to Admin dashboard ." });
-
-    
-}); */
-// function initial() {
-//   Role.estimatedDocumentCount((err, count) => {
-//     if (!err && count === 0) {
-//       new Role({
-//         name: "student"
-//       }).save(err => {
-//         if (err) {
-//           console.log("error", err);
-//         }
-
-//         console.log("added 'student' to roles collection");
-//       });
-
-//       new Role({
-//         name: "admin"
-//       }).save(err => {
-//         if (err) {
-//           console.log("error", err);
-//         }
-
-//         console.log("added 'admin' to roles collection");
-//       });
-
-//       new Role({
-//         name: "professor"
-//       }).save(err => {
-//         if (err) {
-//           console.log("error", err);
-//         }
-
-//         console.log("added 'professor' to roles collection");
-//       });
-//     }
-//   });
-// }
 
 // routes
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
+
+
+
+//student
+app.post('/add_student', (req , res , next)=>{
+  let new_student = new Student({
+    Name : req.body.Name ,
+    Departement : req.body.Departement ,
+    Mobile : req.body.Mobile,
+    email : req.body.email,
+    AdmissionDate : req.body.AdmissionDate ,
+   
+    })
+    new_student.save().then((user)=>{
+      res.json({"Succ":"Student Succ Added"})
+    })
+})
+
+app.get('/all_students', async (req , res) =>{
+  //console.log("test ")
+  try {
+    await Student.find({}) 
+    .then(result=>{
+      res.send(result)
+    }) 
+  }catch(e){
+    console .log(e)
+  }
+})
+app.get('/getstudentBy/:id', async (req , res) =>{
+ 
+  let myid = req.params.id ;
+  Student.findOne({"_id" : myid}).then(async function(Foundstudent) {
+    if(Foundstudent!= null){
+        res.json(Foundstudent)
+    }else{
+      res.json({"error": "Student does not exist"})
+    }
+               
+})
+})
+
+app.delete('/delete_student/:id', async (req , res) =>{
+  let myid = req.params.id ;
+  Student.findOne({"_id" : myid}).then(async function(Foundstudent) {
+    if(Foundstudent!= null){
+      await Student.deleteOne({_id: myid}) 
+      .then(result=>{
+        res.json({"Msg":"Student Deleted Successfully"});
+      }).catch((err)=>{
+        res.json(err) ;
+
+    })
+    }else{
+      res.json({"error": "Student does not exist"})
+
+    }
+  })
+})
+
+app.put('/edit_student/:id', (req , res , next)=>{
+   let myid = req.params.id ;
+
+   Student.findOne({"_id" : myid}).then(async function(Foundstudent) {
+    if(Foundstudent!= null){
+        const da = await Student.findOneAndUpdate({_id :Foundstudent._id}, 
+            req.body,{new:true}) 
+          .then(result=>{
+            res.json({"Msg":"Student Updated Successfully"});
+        }).catch((err)=>{
+            res.json({"error":err}) ;
+
+        }) 
+    }
+               
+})
+})
+
+//professor
+app.post('/add_professor', (req , res , next)=>{
+  let new_professor = new professor({
+    Name : req.body.Name ,
+    Departement : req.body.Departement ,
+    Gender : req.body.Gender ,
+    Mobile : req.body.Mobile,
+    Email : req.body.Email,
+    JoiningDate : req.body.JoiningDate ,
+   
+    })
+    new_professor.save().then((user)=>{
+      res.json({"Succ":"professor Succ Added"})
+    })
+})
+
+app.get('/all_professor', async (req , res) =>{
+  //console.log("test ")
+  try {
+    await professor.find({}) 
+    .then(result=>{
+      res.send(result)
+    }) 
+  }catch(e){
+    console .log(e)
+  }
+})
+
+app.get('/getprofessorBy/:id', async (req , res) =>{
+ 
+  let myid = req.params.id ;
+  professor.findOne({"_id" : myid}).then(async function(Foundprofessor) {
+    if(Foundprofessor!= null){
+        res.json(Foundprofessor)
+    }else{
+      res.json({"error": "professor does not exist"})
+    }
+               
+})
+})
+
+app.delete('/delete_professor/:id', async (req , res) =>{
+  let myid = req.params.id ;
+  professor.findOne({"_id" : myid}).then(async function(Foundprofessor) {
+    if(Foundprofessor!= null){
+      await professor.deleteOne({_id: myid}) 
+      .then(result=>{
+        res.json({"Msg":"professor Deleted Successfully"});
+      }).catch((err)=>{
+        res.json(err) ;
+
+    })
+    }else{
+      res.json({"error": "professor does not exist"})
+
+    }
+  })
+})
+
+app.put('/edit_professor/:id', (req , res , next)=>{
+  let myid = req.params.id ;
+
+  professor.findOne({"_id" : myid}).then(async function(Foundprofessor) {
+   if(Foundprofessor!= null){
+       const da = await professor.findOneAndUpdate({_id :Foundprofessor._id}, 
+           req.body,{new:true}) 
+         .then(result=>{
+           res.json({"Msg":"professor Updated Successfully"});
+       }).catch((err)=>{
+           res.json({"error":err}) ;
+
+       }) 
+   }
+              
+})
+})
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
